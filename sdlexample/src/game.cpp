@@ -125,6 +125,7 @@ void game::update()
 void game::render()
 {
     auto pos = SDL_Rect{player.pos.x, player.pos.y, player.pos.w, player.pos.h};
+    //auto enemypos = SDL_Rect{enemy.pos.x, enemy.pos.y, enemy.pos.w, enemy.pos.h};
     SDL_RenderClear(renderer);
     for (auto&& bullet : player.bullets) {
         auto bulletpos = SDL_Rect{bullet.x, bullet.y, 75, 75};
@@ -132,7 +133,9 @@ void game::render()
         SDL_RenderCopy(renderer, get_texture("bullet.png"), nullptr, &bulletpos);
     }
     SDL_RenderCopy(renderer, get_texture("goodship.png"), nullptr, &pos);
+    //SDL_RenderCopy(renderer, get_texture("maro.png"), nullptr, &enemypos);
     SDL_RenderPresent(renderer);
+
 }
 
 SDL_Texture* game::get_texture(const std::string& filename)

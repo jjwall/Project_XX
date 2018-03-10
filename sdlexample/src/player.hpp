@@ -19,19 +19,19 @@ public:
 
     float_rect pos;
 
-    struct shot
+    struct shootType
     {
         float x;
         float y;
     };
 
     //shot shots;
-    std::vector<shot> bullets;
+    std::vector<shootType> bullets;
 
-    shot shoot(float x, float y) {
+    shootType shoot(float x, float y) {
         //x = pos.x;
         //y = pos.y;
-        shot bullet;
+        shootType bullet;
         bullet.x = x + 100;
         bullet.y = y + 17;
         bullets.push_back(bullet);

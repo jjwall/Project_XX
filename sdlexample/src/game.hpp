@@ -3,6 +3,8 @@
 
 #include "player.hpp"
 
+#include "enemy.hpp"
+
 #include <SDL2/SDL.h>
 
 #include <unordered_map>
@@ -30,6 +32,8 @@ private:
     std::unordered_map<std::string, SDL_Texture*> texture_cache;
 
     player player;
+
+    //enemy enemy;
 
     void clear_texture_cache();
 };
